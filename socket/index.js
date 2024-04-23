@@ -1,4 +1,8 @@
 import { Server } from "socket.io";
+import dotenv from 'dotenv'
+
+dotenv.config()
+const PORT = 8800 || process.env.PORT
 
 const io = new Server({
   cors: {
@@ -40,8 +44,8 @@ io.on("connection", (socket) => {
   });
 });
 
-io.listen(8800, () => {
-  console.log("Socket server running on port 8800");
+io.listen(PORT, () => {
+  console.log(`Socket server running on port ${PORT}`);
 });
 
 io.on("error", (error) => {
