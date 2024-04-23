@@ -6,6 +6,9 @@ import UserRouter from "./UserRoute.js"
 
 const routers = express.Router()
 
+routers.get('/',(req, res) => res.status(200).send({message: "Api Working Find"}))
+
+
 routers.use("/auth", AuthRouter)
 routers.use("/chat", ChatRouter)
 routers.use("/message", MessageRuter)
