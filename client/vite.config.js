@@ -9,7 +9,7 @@ export default defineConfig({
     hmr: true,
     proxy: {
       "/api": {
-        target: "http://localhost:8000",
+        target: "https://chat-app-orcin-eight.vercel.app",
         changeOrigin: true,
       },
     },
