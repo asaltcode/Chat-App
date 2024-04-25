@@ -6,7 +6,7 @@ const PORT = 8800 || process.env.PORT
 
 const io = new Server({
   cors: {
-    origin: "https://chat-app-pgpl.vercel.app",
+    origin: "*",
     methods: ["GET", "POST"],
     credentials: true
   },
