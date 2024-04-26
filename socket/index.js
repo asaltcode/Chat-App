@@ -14,7 +14,7 @@ const io = new SocketServer(server, {
     origin: ["http://localhost:5173", "https://chat-app-pgpl.vercel.app"],
     methods: ["GET", "POST", "OPTIONS"]
   },
-  pingTimeout: 60000 // Increase the ping timeout to 60 seconds
+  pingTimeout: 6000 // Increase the ping timeout to 6 seconds
 });
 
 let activeUsers = [];
