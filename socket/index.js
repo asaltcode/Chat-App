@@ -19,7 +19,9 @@ const io = new Server(server, {
 let activeUsers = [];
 
 app.get('/', (req, res) => {
-  res.sendFile('E:/test/index.html');
+  res.status(200).send({
+    message: `Socket Server run successfully ${process.env.PORT}`
+  });
 });
 
 io.on("connection", (socket) => {
