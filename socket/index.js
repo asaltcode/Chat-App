@@ -13,8 +13,7 @@ const io = new SocketServer(server, {
   cors: {
     origin: ["http://localhost:5173", "https://chat-app-pgpl.vercel.app"],
     methods: ["GET", "POST", "OPTIONS"]
-  },
-  pingTimeout: 6000 // Increase the ping timeout to 6 seconds
+  }
 });
 
 let activeUsers = [];
