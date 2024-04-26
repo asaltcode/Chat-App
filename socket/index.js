@@ -9,18 +9,19 @@ dotenv.config();
 const app = express();
 app.use(cors());
 const server = http.createServer(app);
-const io = new SocketServer(server, {
+const io = new Server(server, {
   cors: {
     origin: ["http://localhost:5173", "https://chat-app-pgpl.vercel.app"],
     methods: ["GET", "POST", "OPTIONS"]
-  }
+  },
+  pingTimeout: 6000 // Increase the ping timeout to 6 seconds
 });
 
 let activeUsers = [];
 
 app.get('/', (req, res) => {
   res.status(200).send({
-    message: `Socket Server run successfully ${process.env.PORT}`
+    message: `Socket Server run successfully ${PORT}`
   });
 });
 
