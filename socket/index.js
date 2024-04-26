@@ -9,11 +9,12 @@ dotenv.config();
 const app = express();
 app.use(cors());
 const server = http.createServer(app);
-const io = new Server(server, {
+const io = new SocketServer(server, {
   cors: {
     origin: ["http://localhost:5173", "https://chat-app-pgpl.vercel.app"],
     methods: ["GET", "POST", "OPTIONS"]
-  }
+  },
+  pingTimeout: 60000 // Increase the ping timeout to 60 seconds
 });
 
 let activeUsers = [];
