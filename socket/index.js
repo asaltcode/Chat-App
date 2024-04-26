@@ -6,8 +6,8 @@ const PORT = 8800 || process.env.PORT
 
 const io = new Server({
   cors: {
-    // origin: "http://localhost:5173",
-    origin: "https://chat-app-pgpl.vercel.app",
+    origin: ["http://localhost:5173", "https://chat-app-pgpl.vercel.app"],
+    // origin: "https://chat-app-pgpl.vercel.app",
     methods: ["GET", "POST", "OPTIONS"]
   },
 });
