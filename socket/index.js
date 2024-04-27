@@ -1,9 +1,22 @@
-import { Server } from "socket.io";
+import express from 'express';
+import http from 'http';
+import { Server } from 'socket.io';
+import cors from 'cors';
 import dotenv from 'dotenv';
 
 dotenv.config();
 
-const io = new Server({
+const app = express();
+const server = http.createServer(app);
+
+app.use(cors());
+const corsOptions = {
+  origin: 'https://chat-app-pgpl.vercel.app',
+  optionsSuccessStatus: 200 // some legacy browsers (IE11, various SmartTVs) choke on 204
+};
+app.use(cors(corsOptions));
+
+const io = new Server(server, {
   cors: {
     origin: ["http://localhost:5173", "https://chat-app-pgpl.vercel.app"],
     methods: ["GET", "POST"]
@@ -39,14 +52,14 @@ io.on("connection", (socket) => {
     console.log("Sending from socket to :", receiverId);
     console.log("Data: ", data);
     if (user) {
-      io.to(user.socketId).emit("receive-message", data); // Corrected typo here
+      io.to(user.socketId).emit("receive-message", data);
     }
   });
 });
 
 const port = process.env.PORT || 8800;
 
-io.listen(port, () => {
+server.listen(port, () => {
   console.log(`Socket server running on port ${port}`);
 });
 
