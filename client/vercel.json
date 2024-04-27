@@ -1,23 +1,10 @@
 {
     "version": 2,
     "routes": [
-        {
-            "src": "/socket.io",
-            "dest": "https://chat-app-thbf.vercel.app/socket.io"
-        }
-    ],
-    "rewrites": [
-        {
-            "source": "/api/v1/:path(.*)",
-            "destination": "https://chat-app-orcin-eight.vercel.app/:path*"
-        },
-        {
-            "source": "/health",
-            "destination": "/health"
-        },
-        {
-            "source": "/(.*)",
-            "destination": "/"
-        }
+      {
+        "src": "/socket.io",
+        "dest": "https://chat-app-thbf.vercel.app/socket.io"
+      }
     ]
-}
+  }
+  
