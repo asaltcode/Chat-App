@@ -1,13 +1,6 @@
 import { Server } from "socket.io";
-import dotenv from 'dotenv';
-import http from 'http';
 
-dotenv.config();
-const PORT = process.env.PORT || 8800;
-
-const server = http.createServer();
-
-const io = new Server(server, {
+const io = new Server({
   cors: {
     origin: ["http://localhost:5173", "https://chat-app-pgpl.vercel.app"],
     methods: ["GET", "POST"]
@@ -48,8 +41,8 @@ io.on("connection", (socket) => {
   });
 });
 
-server.listen(PORT, () => {
-  console.log(`Socket server running on port ${PORT}`);
+io.listen(8800, () => {
+  console.log("Socket server running on port 8800");
 });
 
 io.on("error", (error) => {
