@@ -96,10 +96,7 @@ const Chat = () => {
                                         </div>
                                             <InputEmoji 
                                             value={newMessage}
-                                            onChange={handleChange}
-                                            height={'30px'}
-                                            theme='auto'
-                                            borderColor='white'     
+                                            onChange={handleChange}                                              
                                             />
                                         <div className="">
                                             {newMessage === "" ? null :<button onClick={handleSend} type="button" style={{cursor: "pointer", border: "none"}} className="preview-icon bg-dark rounded-circle p-1 fs-4">
