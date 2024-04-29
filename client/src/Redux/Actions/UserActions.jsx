@@ -31,6 +31,8 @@ import { userFail, userRequest, userSuccess } from "../Slices/UsersSlicer";
       dispatch(loginRequest());
       const { data } = await AxiosService.post(LOG_IN.path, { email, password });
       dispatch(loginSuccess(data));
+      console.log(data)
+      localStorage.setItem("token", data.token)
     } catch (error) {
       dispatch(loginFail(error.response.data.message));
     }
@@ -64,6 +66,7 @@ import { userFail, userRequest, userSuccess } from "../Slices/UsersSlicer";
     try {
       await AxiosService.get("auth/logout")
       dispatch(logoutSuccess());
+      localStorage.removeItem("token")
     } catch (error) {
       dispatch(logoutFail());
     }

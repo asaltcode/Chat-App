@@ -45,10 +45,16 @@ const MessageSlicer = createSlice({
           loading: false,          
           message: newMessage,
         };
-      },      
+      },   
+      clearMessageError(state, action) {
+        return {
+          ...state,
+          error: null,
+        };
+      },   
   }
 })
 
 const {reducer, actions} = MessageSlicer
-export const {messageRequest, messageSuccess, messageFail, addMessagesRequest, addMessagesSuccess, receiveMessages} = actions
+export const {messageRequest, messageSuccess, messageFail, addMessagesRequest, addMessagesSuccess, receiveMessages, clearMessageError} = actions
 export default reducer

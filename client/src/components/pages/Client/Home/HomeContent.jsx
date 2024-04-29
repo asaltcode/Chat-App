@@ -51,8 +51,8 @@ const HomeContent = () => {
   return (
     <>
       <HomeBg />
-      <div style={{position: "relative" }} className="h-100 m-2">
-        <h1 className="text-center display-1 p-4">
+      <div style={{position: "relative" }} className="h-100 m-2 d-flex flex-column justify-content-center">
+        <h1 className="text-center display-2 p-4">
             <Typewriter options={{ strings: ["Hi Welcome", "Find Your Friends" , "Start Your Chat" ], autoStart: true, loop: true, }} />
         </h1>
         <div className="row justify-content-center">
@@ -76,10 +76,7 @@ const HomeContent = () => {
                                                 <td className="py-1">
                                                     <img src={data.avatar ? data.avatar: Profile} className="object-fit-cover" style={{ height: "40px", width: "40px" }} alt="image" />
                                                    <span className="ps-3">{data.username}</span>
-                                                </td>
-                                                {/* <td>{data.username}</td> */}
-                                                {/* <td></td> */}
-                                                {/* <td>{data.email}</td> */}
+                                                </td>                                               
                                             </tr>
                                         ))
                                     ) : (

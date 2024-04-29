@@ -30,9 +30,15 @@ const UsersSlicer = createSlice({
             users: null
           };
       },
+      clearUsersError(state, action) {
+        return {
+          ...state,
+          error: null,
+        };
+      },
     }
 })
 
 const {reducer, actions} = UsersSlicer
-export const {userRequest, userSuccess, userFail, clearSearchUser} = actions
+export const {userRequest, userSuccess, userFail, clearSearchUser, clearUsersError} = actions
 export default reducer

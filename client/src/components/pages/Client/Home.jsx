@@ -3,6 +3,7 @@ import "../../../assets/css/style.css";
 import { Outlet, useLocation } from "react-router-dom";
 import Topbar from "../../Global/Topbar";
 import Sidebar from "../../Global/Sidebar"
+import Error from "../Error";
 
 const Home = () => {
   const location = useLocation()
@@ -23,6 +24,7 @@ const Home = () => {
 
   return (
     <>
+    <Error/>
     <div onClick={handleToggles} className={`dashboar_container ${sideToggle}`}>
         <div className="container-scroller">
             <Sidebar activeSideToggle={activeSideToggle} setActiveSideToggle={setActiveSideToggle} profileDropDown={profileDropDown} setProfileDropDown={setProfileDropDown} profileStyle={profileStyle} setProfileStyle={setProfileStyle} />

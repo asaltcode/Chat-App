@@ -5,6 +5,7 @@ import * as Yup from "yup"
 import { useDispatch, useSelector } from "react-redux"
 import { clearAuthError, login } from '../../../Redux/Actions/UserActions';
 import { toast } from 'react-toastify';
+import Loading from "../../../animation/Loading"
 
 const Login = () => {
     const navigate = useNavigate()
@@ -46,7 +47,8 @@ const Login = () => {
           return
         }
       },[isAuthenticated, error, dispatch, navigate])
-  return (
+  return (<>
+ {loading && <Loading/>}
     <div className="container-scroller bg-image">
     <div className="container-fluid page-body-wrapper full-page-wrapper">
         <div className="row w-100 m-0">
@@ -84,7 +86,7 @@ const Login = () => {
     </div>
     {/* page-body-wrapper ends */}
 </div>
-  );
+</>);
 };
 
 export default Login;

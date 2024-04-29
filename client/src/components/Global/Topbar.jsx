@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-// import Logo_mini from '../../../assets/images/logo-mini.svg'
+import Logo_mini from '../../assets/miniLogo.svg'
 // import Logo from '../../../assets/images/logo.svg'
 import Profile from "../../../public/defaultProfile.png"
 import { Link, useNavigate } from 'react-router-dom'
@@ -10,8 +10,7 @@ import { logout } from '../../Redux/Actions/UserActions'
 // import '../assets/css/style.css'
 
 const Topbar = ({sideToggle, setSideToggle, activeSideToggle, setActiveSideToggle, profileShow, setProfileShow}) => {
-  const Logo = "https://images.pexels.com/photos/1162983/pexels-photo-1162983.jpeg"
-  const Logo_mini = "https://images.pexels.com/photos/1162983/pexels-photo-1162983.jpeg"
+  // const Logo_mini = "https://images.pexels.com/photos/1162983/pexels-photo-1162983.jpeg"
 
   const dispatch = useDispatch()
   const {user, isAuthenticated} = useSelector(state => state.authState)
@@ -36,7 +35,7 @@ const Topbar = ({sideToggle, setSideToggle, activeSideToggle, setActiveSideToggl
             </button>
             <ul className="navbar-nav w-100">
               <li className="nav-item w-100">
-               <h2 className=' fw-bold text-center'>Asalt Chat <i className='mdi mdi-facebook-messenger'></i></h2>
+               <h2 className=' fw-bold text-center'><i className='mdi mdi-facebook-messenger'></i></h2>
               </li>
             </ul>
             <ul className="navbar-nav navbar-nav-right">

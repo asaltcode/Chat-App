@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import Logo from '../../assets/logo.svg';
-// import Logo_mini from '../../../assets/images/logo-mini.svg';
+import Logo_mini from '../../assets/miniLogo.svg'
 import Profile from '../../../public/defaultProfile.png'
 import { useNavigate, useLocation } from 'react-router-dom';
 import { useSelector } from 'react-redux';
@@ -8,8 +8,8 @@ import { useSelector } from 'react-redux';
 
 const Sidebar = ({activeSideToggle, setActiveSideToggle, profileDropDown, setProfileDropDown, profileStyle, setProfileStyle}) => {
 
-//   const Logo = "https://images.pexels.com/photos/1162983/pexels-photo-1162983.jpeg"
-  const Logo_mini = "https://images.pexels.com/photos/1162983/pexels-photo-1162983.jpeg"
+//   const Logo = "https://cdn.pixabay.com/photo/2024/04/12/18/18/ai-generated-8692405_1280.jpg"
+//   const Logo_mini = "https://images.pexels.com/photos/1162983/pexels-photo-1162983.jpeg"
 //   const Profile = "https://images.pexels.com/photos/1162983/pexels-photo-1162983.jpeg"
   const {user, isAuthenticated} = useSelector(state => state.authState)
 //   const  user ={}

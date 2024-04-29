@@ -44,10 +44,16 @@ const ChatSlicer = createSlice({
           error: action.payload,
         };
       },
+      clearChatError(state, action) {
+        return {
+          ...state,
+          error: null,
+        };
+      },
       
   }
 })
 
 const {reducer, actions} = ChatSlicer
-export const {chatRequest, chatSuccess, chatFail, newChatRequest, newChatSuccess, newChatFail} = actions
+export const {chatRequest, chatSuccess, chatFail, newChatRequest, newChatSuccess, newChatFail, clearChatError} = actions
 export default reducer

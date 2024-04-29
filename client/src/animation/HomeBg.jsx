@@ -15,7 +15,7 @@ const HomeBg = () => {
       }, []);
       return <>
       <div style={{zIndex: "0", position: "fixed"}} className="">
-        <div id="home-bg" className='overflow-hidden' style={{height: '100%', width: '100%'}}></div>
+        <div id="home-bg" className='overflow-hidden' style={{height: '100%', width: '100%', backgroundSize: "cover"}}></div>
       </div>
      </>
 }

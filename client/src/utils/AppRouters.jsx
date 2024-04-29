@@ -37,21 +37,23 @@ const AppRouters = [
           path: "chat",
           element: <>
             <ProtectedRoute>
-            <Chat/>
+              <Chat/>
             </ProtectedRoute>          
           </> 
         },
         {
           path: "friends",
           element:<>
-          <div style={{height: "87vh"}} className="row overflow-hidden position-relative">
-            <Friends  md={"none"} s={"block"} />
-          </div>
+           <ProtectedRoute>
+              <div style={{height: "h-100"}} className="row overflow-hidden position-relative">
+                <Friends  md={"none"} s={"block"} />
+              </div>
+           </ProtectedRoute>
           </>
         },
         {
           path: "edit",
-          element: <EditProfile/>
+          element: <ProtectedRoute><EditProfile/></ProtectedRoute> 
         },
       ]
     },

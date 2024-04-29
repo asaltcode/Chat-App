@@ -6,6 +6,8 @@ import Loading from '../animation/Loading'
 const ProtectedRoute = ({children, isAdmin}) => {
   const {isAuthenticated, loading, user, error} = useSelector(state => state.authState)
 
+  const token = localStorage.getItem("token")
+
   if(!isAuthenticated && !loading) {
     return <Navigate to="/login"/>
   }
@@ -21,7 +23,6 @@ const ProtectedRoute = ({children, isAdmin}) => {
     return <Loading/>
   }
   console.log(error)
-
 }
 
 export default ProtectedRoute
