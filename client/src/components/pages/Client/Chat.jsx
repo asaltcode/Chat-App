@@ -88,7 +88,7 @@ const Chat = () => {
                         <div className="col-12">
                             <div className="form-group row justify-content-center">
                                 <div className="col-11 col-sm-11 col-md-11">
-                                    <div className="d-flex gap-2">
+                                    <div style={{zIndex: "10", position: "relative"}} className="d-flex gap-2">
                                         <div className="">
                                             <button type="button" style={{cursor: "pointer", border: "none"}} className="preview-icon bg-dark rounded-circle p-1 fs-4">
                                                 <i  className="mdi mdi-plus-box text-primary px-2"></i>
@@ -97,6 +97,9 @@ const Chat = () => {
                                             <InputEmoji 
                                             value={newMessage}
                                             onChange={handleChange}
+                                            height={'30px'}
+                                            theme='auto'
+                                            borderColor='white'     
                                             />
                                         <div className="">
                                             {newMessage === "" ? null :<button onClick={handleSend} type="button" style={{cursor: "pointer", border: "none"}} className="preview-icon bg-dark rounded-circle p-1 fs-4">

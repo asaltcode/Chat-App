@@ -8,6 +8,7 @@ import Chat from '../components/pages/Client/Chat'
 import Friends from '../components/pages/Client/Friends'
 import HomeContent from '../components/pages/Client/Home/HomeContent'
 import EditProfile from '../components/pages/Client/EditProfile/EditProfile'
+import ForgotPassword from '../components/pages/Auth/ForgotPassword'
 
 const AppRouters = [
     // Auth Routers
@@ -20,6 +21,11 @@ const AppRouters = [
         path: "/register",
         exact: true,
         element: <><Register/></>
+    },
+    {
+        path: "/forget",
+        exact: true,
+        element: <><ForgotPassword/></>
     },
     {
         path: "/",

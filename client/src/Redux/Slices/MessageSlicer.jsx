@@ -48,7 +48,7 @@ const MessageSlicer = createSlice({
       },   
       clearMessageError(state, action) {
         return {
-          ...state,
+          message: null,
           error: null,
         };
       },   

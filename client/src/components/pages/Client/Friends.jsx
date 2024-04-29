@@ -29,7 +29,7 @@ const Friends = ({md, sm, s,}) => {
     },[user, currentChat])
     
   return (<>
-        <div style={{background: "#191C24", zIndex: "100"}} className=" overflow-hidden border-bottom col-12 col-md-4 col-sm-12 d-md-block text-center p-1 ms-2 position-absolute top-0 start-0">
+        <div style={{background: "#191C24", zIndex: "10"}} className=" overflow-hidden border-bottom col-12 col-md-4 col-sm-12 d-md-block text-center p-1 ms-2 position-absolute top-0 start-0">
             <h3 className="text-light fw-bold">Chates 🤩</h3>                                                
         </div>  
     <div className={`col h-100 overflow-scroll col-md-4  p-0 border-end border-secondary d-sm-${sm} d-${s} d-md-${md} `}>

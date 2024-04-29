@@ -54,7 +54,7 @@ const Messages = ({ recieveMessage }) => {
 
     return (
         <>
-            <div style={{ background: "#191C24", zIndex: "100" }} className="overflow-hidden border-bottom col-12 col-md-8 col-sm-12 d-md-block text-center p-1 ms-2 position-absolute top-0 end-0">
+            <div style={{ background: "#191C24", zIndex: "10" }} className="overflow-hidden border-bottom col-12 col-md-8 col-sm-12 d-md-block text-center p-1 ms-2 position-absolute top-0 end-0">
                 <div className="row">
                     <div className="pe-5 col-sm-6 ps-md-5 col-8 text-start">
                         <h3 className="text-light fw-normal"><span className='pointer text-light me-4 d-md-none' onClick={() => navigate("/friends")} ><i className='mdi mdi-arrow-left'></i></span>{receiveUser?.username}</h3>
